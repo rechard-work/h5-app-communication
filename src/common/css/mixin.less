@@ -1,0 +1,102 @@
+.border-top-1px,
+.border-right-1px,
+.border-left-1px {
+  position: relative;
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    -ms-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  .border-top-1px {
+    &::before {
+      width: 200%;
+      -ms-transform: scale(0.5) translateZ(0);
+      -webkit-transform: scale(0.5) translateZ(0);
+      transform: scale(0.5) translateZ(0);
+    }
+  }
+  .border-right-1px {
+    &::after {
+      height: 200%;
+      -ms-transform: scale(0.5) translateZ(0);
+      -webkit-transform: scale(0.5) translateZ(0);
+      transform: scale(0.5) translateZ(0);
+    }
+  }
+  .border-bottom-1px {
+    &:after {
+      width: 200%;
+      -ms-transform: scale(0.5) translateZ(0);
+      -webkit-transform: scale(0.5) translateZ(0);
+      transform: scale(0.5) translateZ(0);
+    }
+  }
+  .border-left-1px {
+    &::before {
+      height: 200%;
+      -ms-transform: scale(0.5) translateZ(0);
+      -webkit-transform: scale(0.5) translateZ(0);
+      transform: scale(0.5) translateZ(0);
+    }
+  }
+}
+
+.border-bottom-1px {
+  position: relative;
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    -ms-transform-origin: 0 bottom;
+    -webkit-transform-origin: 0 bottom;
+    transform-origin: 0 bottom;
+  }
+}
+.border-bottom-1px {
+  &:after {
+    width: 300%;
+    -ms-transform: scale(0.333) translateZ(0);
+    -webkit-transform: scale(0.333) translateZ(0);
+    transform: scale(0.333) translateZ(0);
+  }
+}
+
+.border-top-1px(@color) {
+  &:before {
+    left: 0;
+    top: 0;
+    transform-origin: 0 top;
+    border-top: 1px solid @color;
+  }
+}
+.border-right-1px(@color) {
+  &:after {
+    top: 0;
+    right: 0;
+    transform-origin: right 0;
+    border-right: 1px solid @color;
+  }
+}
+.border-bottom-1px(@color) {
+  &:after {
+    left: 0;
+    bottom: 0;
+    transform-origin: 0 bottom;
+    border-bottom: 1px solid @color;
+  }
+}
+.border-left-1px(@color) {
+  &:before {
+    top: 0;
+    left: 0;
+    transform-origin: left 0;
+    border-left: 1px solid @color;
+  }
+}
