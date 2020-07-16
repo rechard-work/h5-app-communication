@@ -32,8 +32,10 @@ export default {
 <style scoped lang='less'>
 .search{
   font-size: 14px;
+  padding-top: 15px;
   .van-cell{
     border: 1px solid #dedede;
+    margin-bottom: 10px;
   }
 }
 </style>

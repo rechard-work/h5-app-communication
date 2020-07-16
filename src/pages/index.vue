@@ -1,6 +1,10 @@
 <template>
   <div class='pages'>
-    <headernav ref="headerNav" :title="title"></headernav>
+    <headernav ref="headerNav" :title="title" :showLeft='false'>
+      <template slot='righttxt'>
+        <i class="iconfont">&#xe655;</i>
+      </template>
+    </headernav>
     <van-swipe ref="myswiper" class="my-swipe" :loop='false' :initial-swipe='current' @change="onChange">
       <van-swipe-item class="flex">
         <div class="flex wrapper" ref="wrapper">
