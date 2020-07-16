@@ -1,18 +1,20 @@
 <template>
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
-    <keep-alive>
-      <router-view v-if="$route.meta.keepAlive"/>
-    </keep-alive>
-    <router-view v-if="!$route.meta.keepAlive"/>
+    <div class="flex">
+      <keep-alive>
+        <router-view v-if="$route.meta.keepAlive"/>
+      </keep-alive>
+      <router-view v-if="!$route.meta.keepAlive"/>
+    </div>
     <van-tabbar route>
-    <van-tabbar-item replace to="/index" icon="home-o">
-      首页
-    </van-tabbar-item>
-    <van-tabbar-item replace to="/search" icon="search">
-      标签
-    </van-tabbar-item>
-  </van-tabbar>
+      <van-tabbar-item replace to="/index" icon="home-o">
+        首页
+      </van-tabbar-item>
+      <van-tabbar-item replace to="/search" icon="search">
+        标签
+      </van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
 
@@ -41,6 +43,9 @@ html,body{
     display: flex;
     flex-direction: column;
     overflow: hidden;
+  }
+  /deep/.van-tabbar--fixed.van-tabbar{
+    position: static !important;
   }
 }
 </style>
